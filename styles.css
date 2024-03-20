@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+
+	background: #95cafb;
+}
+
+main {
+	height: 90vh;
+	margin: 1rem auto;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	gap: 1rem;
+}
+
+form {
+	width: 100%;
+	width: 550px;
+	height: 500px;
+	margin: 1rem auto;
+	padding: 20px;
+	background: #f4f7f8;
+	box-shadow: 0 0 10px 0 #000;
+}
+
+img {
+	width: 550px;
+	height: 500px;
+	margin-right: auto;
+}
