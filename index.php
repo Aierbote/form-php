@@ -12,7 +12,7 @@
 
 <body>
 	<main>
-		<form action="submit_form.php">
+		<form action="submit_form.php" method="POST">
 			<h1>Fill the form</h1>
 			<p>Complete the form to get instant access.</p>
 
