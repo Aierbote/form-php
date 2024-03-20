@@ -35,9 +35,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // If there are no errors, process the form data
   if (empty($errors)) {
-    // Process the form data here
-    // ...
-    echo "Form submitted successfully";
+    if (session_status() == PHP_SESSION_NONE) {
+      session_start();
+    }
+
+    $_SESSION["companyName"] = $companyName;
+    $_SESSION["fullname"] = $fullname;
+    $_SESSION["email"] = $email;
+    $_SESSION["phone"] = $phone;
+    $_SESSION["serviceChoice"] = $serviceChoice;
+
+    header("Location: index.php");
   } else {
     // Display the errors
     foreach ($errors as $error) {
