@@ -57,7 +57,8 @@ form > h1,
 	padding: 10px;
 }
 
-#form-inputs > button[type="submit"] {
+#form-inputs > button[type="submit"],
+#form-success-details > #backButton {
 	padding: 10px;
 	background: rgb(41 154 244);
 

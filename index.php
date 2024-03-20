@@ -4,6 +4,9 @@ if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
 
+$freeService = "Free and Slow";
+$premiumService = "Premium and Fast";
+
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +31,10 @@ if (session_status() == PHP_SESSION_NONE) {
 			isset($_SESSION["email"]) &&
 			isset($_SESSION["phone"]) &&
 			isset($_SESSION["serviceChoice"])
-		) :
+		) {
 
 		?>
-			<div id="form-success">
+			<form id="form-success" action="done.php" method="GET">
 				<h1>Form Submitted Successfully</h1>
 				<p>Thank you for submitting the form. We will get back to you shortly.</p>
 
@@ -40,13 +43,29 @@ if (session_status() == PHP_SESSION_NONE) {
 					<p><strong>Fullname:</strong> <?php echo $_SESSION["fullname"]; ?></p>
 					<p><strong>Email:</strong> <?php echo $_SESSION["email"]; ?></p>
 					<p><strong>Phone:</strong> <?php echo $_SESSION["phone"]; ?></p>
-					<p><strong>Service Choice:</strong> <?php echo $_SESSION["serviceChoice"]; ?></p>
+					<p>
+						<strong>Service Choice:</strong>
+						<?php
+
+						echo $_SESSION["serviceChoice"] . " - ";
+
+						if ($_SESSION["serviceChoice"] === "Free") {
+							echo $freeService;
+						} else {
+							echo $premiumService;
+						}
+						?>
+					</p>
+
+					<button id="backButton" type="submit">Go Back</button>
 				</div>
-			</div>
+			</form>
 
-		<?php else : ?>
+		<?php
 
+		} else {
 
+		?>
 			<form action="submit_form.php" method="POST">
 				<h1>Fill the form</h1>
 				<p>Complete the form to get instant access.</p>
@@ -59,15 +78,19 @@ if (session_status() == PHP_SESSION_NONE) {
 
 					<select name="service-choice" id="form-service-choice" required>
 						<option value="default">Choose a service...</option>
-						<option value="Free">Free and Slow</option>
-						<option value="Premium">Premium and Fast</option>
+						<option value="Free"><?php echo $freeService ?></option>
+						<option value="Premium"><?php echo $premiumService ?></option>
 					</select>
 
 					<button id="submitButton" type="submit" disabled>Send Request</button>
 				</div>
 			</form>
 
-		<?php endif; ?>
+		<?php
+
+		};
+
+		?>
 
 		<img src="mobile_delivery_track.png" alt="image of a delivery track" />
 	</main>
