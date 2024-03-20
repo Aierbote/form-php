@@ -32,6 +32,38 @@ form {
 	box-shadow: 0 0 10px 0 #000;
 }
 
+form > h1 {
+	color: rgb(46 80 124);
+}
+
+form > p,
+form > h1 {
+	margin-bottom: 1rem;
+}
+
+#form-inputs {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+#form-inputs > input,
+#form-inputs > select {
+	padding: 10px;
+}
+
+#form-inputs > button[type="submit"] {
+	padding: 10px;
+	background: rgb(41 154 244);
+
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+
+	border: none;
+	border-radius: 50px;
+}
+
 img {
 	width: 550px;
 	height: 500px;

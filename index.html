@@ -10,24 +10,38 @@
 	<body>
 		<main>
 			<form action="">
-				<input
-					type="text"
-					name="companyName"
-					id="form-company-name"
-					placeholder="Company Name"
-				/>
-				<input
-					type="text"
-					name="fullname"
-					id="form-fullname"
-					placeholder="Fullname"
-				/>
-				<input
-					type="text"
-					name="fullname"
-					id="form-fullname"
-					placeholder="Fullname"
-				/>
+				<h1>Fill the form</h1>
+				<p>Complete the form to get instant access.</p>
+
+				<div id="form-inputs">
+					<input
+						type="text"
+						name="companyName"
+						id="form-company-name"
+						placeholder="Company Name"
+					/>
+					<input
+						type="text"
+						name="fullname"
+						id="form-fullname"
+						placeholder="Fullname"
+					/>
+					<input
+						type="email"
+						name="email"
+						id="form-email"
+						placeholder="Email"
+					/>
+					<input type="tel" name="phone" id="form-phone" placeholder="Phone" />
+
+					<select name="service-choice" id="form-service-choice">
+						<option value="default">Choose a service...</option>
+						<option value="Free">Free and Slow</option>
+						<option value="Premium">Premium and Fast</option>
+					</select>
+
+					<button type="submit">Send Request</button>
+				</div>
 			</form>
 
 			<img src="mobile_delivery_track.png" alt="image of a delivery track" />
