@@ -9,21 +9,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Validate form inputs
   $errors = [];
 
-  if (empty($companyName)) {
+  if (empty(trim($companyName))) {
     $errors[] = "Company Name is required";
   }
 
-  if (empty($fullname)) {
+  if (empty(trim($fullname))) {
     $errors[] = "Fullname is required";
   }
 
-  if (empty($email)) {
+  if (empty(trim($email))) {
     $errors[] = "Email is required";
   } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = "Invalid email format";
   }
 
-  if (empty($phone)) {
+  if (empty(trim($phone))) {
     $errors[] = "Phone is required";
   } elseif (!preg_match("/^[0-9]{10}$/", $phone)) {
     $errors[] = "Invalid phone number format";
