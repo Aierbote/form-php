@@ -42,33 +42,34 @@ if (session_status() == PHP_SESSION_NONE) {
 					<p><strong>Phone:</strong> <?php echo $_SESSION["phone"]; ?></p>
 					<p><strong>Service Choice:</strong> <?php echo $_SESSION["serviceChoice"]; ?></p>
 				</div>
+			</div>
 
-			<?php else : ?>
+		<?php else : ?>
 
 
-				<form action="submit_form.php" method="POST">
-					<h1>Fill the form</h1>
-					<p>Complete the form to get instant access.</p>
+			<form action="submit_form.php" method="POST">
+				<h1>Fill the form</h1>
+				<p>Complete the form to get instant access.</p>
 
-					<div id="form-inputs">
-						<input type="text" name="companyName" id="form-company-name" placeholder="Company Name" required />
-						<input type="text" name="fullname" id="form-fullname" placeholder="Fullname" required />
-						<input type="email" name="email" id="form-email" placeholder="Email" required />
-						<input type="tel" name="phone" id="form-phone" placeholder="Phone" required />
+				<div id="form-inputs">
+					<input type="text" name="companyName" id="form-company-name" placeholder="Company Name" required />
+					<input type="text" name="fullname" id="form-fullname" placeholder="Fullname" required />
+					<input type="email" name="email" id="form-email" placeholder="Email" required />
+					<input type="tel" name="phone" id="form-phone" placeholder="Phone" required />
 
-						<select name="service-choice" id="form-service-choice" required>
-							<option value="default">Choose a service...</option>
-							<option value="Free">Free and Slow</option>
-							<option value="Premium">Premium and Fast</option>
-						</select>
+					<select name="service-choice" id="form-service-choice" required>
+						<option value="default">Choose a service...</option>
+						<option value="Free">Free and Slow</option>
+						<option value="Premium">Premium and Fast</option>
+					</select>
 
-						<button id="submitButton" type="submit" disabled>Send Request</button>
-					</div>
-				</form>
+					<button id="submitButton" type="submit" disabled>Send Request</button>
+				</div>
+			</form>
 
-			<?php endif; ?>
+		<?php endif; ?>
 
-			<img src="mobile_delivery_track.png" alt="image of a delivery track" />
+		<img src="mobile_delivery_track.png" alt="image of a delivery track" />
 	</main>
 </body>
 
