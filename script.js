@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const inputs = form.querySelectorAll('input, select');
 
+  const email = (document.querySelector('input[type="email"]').value).trim();
+  const regexEmail = /^[a-zA-Z0-9.-|(\+)]+@(\w+)(\.(\w{2,})){1,2}$/;
+
   inputs.forEach(input => {
     input.addEventListener('input', function () {
       let allAreValid = true;
@@ -13,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
         allAreValid = false;
       }
 
+      if (!regexEmail.test(email)) {
+        allAreValid = false;
+      }
 
 
       inputs.forEach(input => {
